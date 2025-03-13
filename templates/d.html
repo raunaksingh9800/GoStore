@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Display Image</title>
+</head>
+<body>
+    <h2>Fetched Image:</h2>
+    <img id="image" alt="Fetched Image" style="max-width: 100%; height: auto;" />
+    
+    <script>
+        var myHeaders = new Headers();
+        myHeaders.append("usr", "bob");
+        myHeaders.append("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYiIsImV4cCI6MTc0MjIzNTA5NX0.s9biWhqRLQGTfvvMZ6PBZkkDC1jTXDOIzpUJxObZTrI");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8080/client/file/view/712f5878-3f54-4a37-bdeb-dc657ef70f91", requestOptions)
+            .then(response => response.blob())
+            .then(blob => {
+                const imageUrl = URL.createObjectURL(blob);
+                document.getElementById("image").src = imageUrl;
+            })
+            .catch(error => console.log('Error:', error));
+    </script>
+</body>
+</html>

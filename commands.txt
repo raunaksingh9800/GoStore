@@ -1,0 +1,17 @@
+-> Reset the database
+> resetdb
+$ rm -r main.db && rm -r .env &&echo "FIRST_START=true\nDEFAULT_CRED=true" >> .env
+
+
+-> Run the Application
+> r
+$ CompileDaemon --build="go build -o main ." --command="./main"
+
+
+-> Open SQL DB
+> rdb
+$ sqlite3 main.db
+
+-> Flush All uploads
+> f
+$ rm -rf ./uploads/*
