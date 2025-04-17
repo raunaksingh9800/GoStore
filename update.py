@@ -12,7 +12,7 @@ LOG_FILE = "updater.log"
 LOCAL_VER_FILE = "version.txt"
 SERVER_BINARY = "./nas-server"
 BUILD_TARGET = "nas-server"
-REMOTE_VER_URL = "https://raw.githubusercontent.com/raunaksingh9800/go_update_sys/main/version.txt"
+REMOTE_VER_URL = "https://raw.githubusercontent.com/raunaksingh9800/GoStore/main/version.txt"
 UPDATE_INTERVAL = 60*10 # seconds
 
 
